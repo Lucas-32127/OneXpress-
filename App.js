@@ -1,7 +1,30 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 
+import React, { useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, Linking } from 'react-native';
 export default function App(){
+  const [a,setA]=useState('');
+    const [b,setB]=useState('');
+      const numero='244925356739';
+        function pedir(){
+            const msg='Ola OneXpress! De: '+a+' Para: '+b;
+                Linking.openURL('https://wa.me/'+numero+'?text='+encodeURIComponent(msg));
+                  }
+                    return(
+                        <View style={{flex:1,backgroundColor:'#000',padding:20,paddingTop:80,alignItems:'center'}}>
+                              <Text style={{color:'#fff',fontSize:30,fontWeight:'bold'}}>OneXpress</Text>
+                                    <View style={{backgroundColor:'#fff',width:'100%',borderRadius:20,padding:20,marginTop:20}}>
+                                            <TextInput placeholder="De onde?" value={a} onChangeText={setA} style={{backgroundColor:'#eee',padding:15,borderRadius:10,marginBottom:10}}/>
+                                                    <TextInput placeholder="Para onde?" value={b} onChangeText={setB} style={{backgroundColor:'#eee',padding:15,borderRadius:10,marginBottom:10}}/>
+                                                            <TouchableOpacity onPress={pedir} style={{backgroundColor:'#25D366',padding:18,borderRadius:10,alignItems:'center'}}>
+                                                                      <Text style={{color:'#fff',fontWeight:'bold'}}>PEDIR NO WHATSAPP</Text>
+                                                                              </TouchableOpacity>
+                                                                                    </View>
+                                                                                        </View>
+                                                                                          );
+                                                                                          }
+                                                                                          export default function App(){
   const [code, setCode] = useState('');
     return (
         <ScrollView style={styles.container}>
